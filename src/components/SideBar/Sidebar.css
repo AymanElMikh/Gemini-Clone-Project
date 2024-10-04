@@ -1,0 +1,74 @@
+.sidebar {
+    min-height: 100vh;
+    display: flex; /* Changed from inline-flex to flex */
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 20px; /* Added padding for better spacing */
+}
+
+.sidebar img {
+    width: 20px;
+}
+
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: flex; /* Changed to flex for better alignment */
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #e6eaf1;
+    border-radius: 50px;
+    font-size: 14px;
+    color: grey;
+    cursor: pointer;
+}
+
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px; 
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: center; /* Changed to center for better alignment */
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #e2e6eb;
+}
+
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .button-item { /* Fixed typo from buttom-item */
+    margin-top: 10px; /* Adjusted margin for spacing */
+    display: flex;
+    align-items: center; /* Ensure icons and text are centered */
+    cursor: pointer;
+    padding: 10px; /* Add padding for clickable area */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.sidebar .button-item:hover {
+    background-color: #e2e6eb; /* Hover effect for button items */
+}
