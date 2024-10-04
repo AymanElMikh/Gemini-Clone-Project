@@ -22,11 +22,11 @@
 .main-container {
     max-width: 900px;
     margin: auto;
-    padding: 20px; /* Add padding for better spacing */
+    padding: 20px;
 }
 
 .main .greet {
-    margin: 50px 0;
+    margin: 50px 0 30px;
     font-size: 56px;
     color: #c4c7c5;
     font-weight: 500;
@@ -36,31 +36,88 @@
     background: linear-gradient(16deg, #4b90ff, #ff5546);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold; /* Optional: Make it bold for emphasis */
+    font-weight: bold;
 }
 
 .cards {
-    display: flex; /* Use flexbox for card layout */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 20px; /* Add spacing between cards */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-.card {
-    flex: 1 1 calc(45% - 20px); /* Responsive card sizing */
-    background: #f9f9f9; /* Add a light background for contrast */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Internal padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    display: flex; /* Flexbox for card content */
-    align-items: center; /* Center content vertically */
+.main .card {
+    flex: 1 1 calc(45% - 20px);
+    background: #dfe4ea;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card p {
+.main .card p {
     flex: 1;
     margin: 0;
 }
 
-.card img {
+.main .card img {
     width: 40px;
     margin-left: 10px;
+}
+
+.main .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: #e0f7fa;
+}
+
+.main-buttom {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    max-width: 900px;
+    padding: 10px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: rgba(169, 169, 169, 0.1);
+}
+
+.search-box input:focus {
+    border-color: #d2d2d2;
+    box-shadow: 0 0 5px rgba(146, 146, 146, 0.5);
+}
+
+.search-box img {
+    width: 28px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-box img:hover {
+    transform: scale(1.1);
+}
+
+.bottom-info {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    padding: 5px 0;
 }

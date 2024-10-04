@@ -1,9 +1,23 @@
-import React from 'react'
-import './Main.css'
-import {assets} from '../../assets/assets'
-
+import {React, useContext} from 'react';
+import './Main.css';
+import {assets} from '../../assets/assets';
+import { Context } from '../../context/context';
 
 const Main = () => {
+
+    const {
+        prevPrompt,
+        setPrevPrompt,
+        onSent,
+        recentPrompt,
+        setRecentPrompt,
+        showResult,
+        loading,
+        resultData,
+        input,
+        setInput
+    } = useContext(Context);
+    
 
   return (
         <div className='main'>
@@ -33,6 +47,19 @@ const Main = () => {
                         <p>Improve the readability of the following code</p>
                         <img src={assets.code_icon} alt="" />
                     </div>
+                </div>
+                <div className='main-buttom'>
+                    <div className='search-box'>
+                        <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here'/>
+                        <div>
+                            <img src={assets.gallery_icon} alt=""/>
+                            <img src={assets.mic_icon} alt=""/>
+                            <img onClick={()=> onSent() } src={assets.send_icon} alt=""/>
+                        </div>
+                    </div>
+                    <p className="bottom-info">
+                        Gemini may display inaccurate info, including about people, so please check
+                    </p>
                 </div>
             </div>
         </div>
