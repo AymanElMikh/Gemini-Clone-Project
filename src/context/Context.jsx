@@ -13,29 +13,33 @@ const ContextProvider = ({children}) => {
     const [resultData, setResultData] = useState("");
 
     const onSent = async () => {
+        
+        setResultData("");
         setLoading(true);
         try {
+            setShowResult(true);
+            setRecentPrompt(input);
             const response = await run(input);
             setResultData(response);
-            setShowResult(true);
         } catch (error) {
             console.error("Error fetching data:", error);
         } finally {
             setLoading(false);
+            setInput("");
         }
     };
 
     const contextValue = {
-    prevPrompt: [],
-    setPrevPrompt: () => {},
-    onSent: () => {},
-    recentPrompt: "",
-    setRecentPrompt: () => {},
-    showResult: false,
-    loading: false,
-    resultData: "",
-    input: "",
-    setInput: () => {},
+        prevPrompt,
+        setPrevPrompt,
+        onSent,
+        recentPrompt,
+        setRecentPrompt,
+        showResult,
+        loading,
+        resultData,
+        input,
+        setInput
     };
 
     return (
