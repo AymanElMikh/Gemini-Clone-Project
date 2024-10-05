@@ -53,8 +53,8 @@ const ContextProvider = ({ children }) => {
     const onSent = async () => {
         setResultData("");
         setLoading(true);
+        setPrevPrompt(prev=> [...prev, input])
         try {
-            setShowResult(true);
             setRecentPrompt(input);
             const response = await run(input);
             const formattedResponse = formatToHTML(response);
@@ -79,6 +79,7 @@ const ContextProvider = ({ children }) => {
         recentPrompt,
         setRecentPrompt,
         showResult,
+        setShowResult,
         loading,
         resultData,
         input,

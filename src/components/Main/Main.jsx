@@ -6,11 +6,9 @@ import { Context } from '../../context/context';
 const Main = () => {
 
     const {
-        prevPrompt,
-        setPrevPrompt,
         onSent,
         recentPrompt,
-        setRecentPrompt,
+        setShowResult,
         showResult,
         loading,
         resultData,
@@ -72,24 +70,21 @@ const Main = () => {
                     </div>
 
                 </div>
-
                 }
-                
-                
-                
+
                 <div className='main-buttom'>
                     <div className='search-box'>
                         <input onChange={(e) => setInput(e.target.value)} value={input}  type="text" placeholder='Enter a prompt here'/>
                         <div>
                             <img src={assets.gallery_icon} alt=""/>
                             <img src={assets.mic_icon} alt=""/>
-                            <img onClick={()=> { onSent()} } src={assets.send_icon} alt=""/>
+                            <img onClick={()=> { onSent(); setShowResult(true);} } src={assets.send_icon} alt=""/>
                         </div>
                     </div>
                     <p className="bottom-info">
                         Gemini may display inaccurate info, including about people, so please check
                     </p>
-                </div>
+                </div>e
             </div>
         </div>
   )
